@@ -17,9 +17,6 @@ const Main = ({ requestMovies, movies }) => {
   const renderMovies = movies.map(movie => (
     <Box
       key={movie.id}
-      width={
-        [1, 1 / 2]
-      }
       align="center"
     >
       <SingleMovie movie={movie} />
@@ -30,6 +27,7 @@ const Main = ({ requestMovies, movies }) => {
     <>
       <Header />
       <Flex
+        justifyContent="center"
         flexWrap="wrap"
       >
         {renderMovies}

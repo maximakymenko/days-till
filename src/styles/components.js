@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
-  padding: 2rem;
+  padding: 0.5rem;
   font-size: 2rem;
   font-weight: bold;
-  background: ${props => props.theme.red};
+  background: ${props => props.theme.orange};
 
   h1 {
     font-size: ${props => props.theme.fs1};
@@ -13,16 +13,29 @@ export const StyledHeader = styled.header`
 
 export const MovieContainer = styled.div`
   display: flex;
+  width: 40rem;
   margin: 2rem;
-  border: 1px solid white;
+  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.5);
+
+  div {
+    padding: 1rem;
+  }
 
   img {
-    border-radius: 0 1.5rem 1.5rem 0;
-    object-fit: contain;
+    object-fit: cover;
   }
 
   h3 {
     font-size: ${props => props.theme.fs2};
-    text-align: center;
+  }
+
+  p {
+    font-size: ${props => props.theme.fs3};
+  }
+
+  span {
+    display: block;
+    font-size: ${props => props.theme.fs2};
+    font-weight: bold;
   }
 `;

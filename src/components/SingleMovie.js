@@ -1,8 +1,10 @@
 import React from 'react';
 import propTypes from 'prop-types';
-import countdown from 'countdown';
+import Countdown from 'react-countdown-now';
 import { createImageLink } from '../utils/createImageLink';
 import { MovieContainer } from '../styles/components';
+
+import LikeButton from './LikeButton';
 
 const SingleMovie = ({ movie }) => (
   <MovieContainer>
@@ -14,11 +16,15 @@ const SingleMovie = ({ movie }) => (
       <h3>
         {movie.title}
       </h3>
-      <div>
-        {countdown(null, new Date(movie.release_date), countdown.DAYS, countdown.HOURS).toString()}
-      </div>
-      {movie.overview}
-      <button type="button">Like</button>
+      <Countdown date={movie.release_date}>
+        <span>
+          Already in cinemas
+        </span>
+      </Countdown>
+      <p>
+        {movie.overview}
+      </p>
+      <LikeButton />
 
     </div>
   </MovieContainer>
