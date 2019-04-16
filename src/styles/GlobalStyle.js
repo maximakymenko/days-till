@@ -7,6 +7,11 @@ export const theme = {
   red: '#F06543',
   grey: '#E0DFD5',
   fontFamily: "'Nunito', sans-serif",
+
+  fs1: '36px',
+  fs2: '24px',
+  fs3: '16px',
+  fs4: '12px',
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -20,6 +25,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: ${theme.fontFamily};
+    font-size: ${theme.fs3};
     color: ${theme.primaryColorLight};
     background: ${theme.primaryColorDark};
   }
