@@ -18,7 +18,7 @@ const Main = ({ requestMovies, movies }) => {
     <Box
       key={movie.id}
       width={
-        [1, 1 / 2, 1 / 3, 1 / 4]
+        [1, 1 / 2]
       }
       align="center"
     >
@@ -29,7 +29,6 @@ const Main = ({ requestMovies, movies }) => {
   return (
     <>
       <Header />
-      Hello, world
       <Flex
         flexWrap="wrap"
       >

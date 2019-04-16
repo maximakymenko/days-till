@@ -4,7 +4,9 @@ import { StyledHeader } from '../styles/components';
 
 const Header = () => (
   <StyledHeader>
-    Find how much left till your favorite movies
+    <h1>
+      Find how much left till your favorite movies
+    </h1>
   </StyledHeader>
 );
 
