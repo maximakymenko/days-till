@@ -1,11 +1,12 @@
 import React from 'react';
-
-import { StyledHeader } from '../styles/components';
+import Clock from './Clock';
+import { StyledHeader } from '../styles/StyledHeader';
 
 const Header = () => (
   <StyledHeader>
     <h1>
-      Find how much left till your favorite movies
+      Movie timer
+      <Clock />
     </h1>
   </StyledHeader>
 );

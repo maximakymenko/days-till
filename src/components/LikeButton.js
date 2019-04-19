@@ -1,10 +1,12 @@
 import React from 'react';
-import heart from '../assets/heart.svg';
+import heart from '../assets/icons/heart.svg';
+
+import { StyledLikeButton } from '../styles/StyledLikeButton';
 
 export default function LikeButton() {
   return (
-    <div>
+    <StyledLikeButton active>
       <img src={heart} alt="like" />
-    </div>
+    </StyledLikeButton>
   );
 }

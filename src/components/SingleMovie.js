@@ -1,17 +1,28 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import Countdown from 'react-countdown-now';
-import { createImageLink } from '../utils/createImageLink';
-import { MovieContainer } from '../styles/components';
+import NotFoundImage from '../assets/images/movie_not_found.jpg';
+import { createImageLink, truncate } from '../utils/utils';
+import { StyledMovie } from '../styles/StyledMovie';
 
 import LikeButton from './LikeButton';
 
 const SingleMovie = ({ movie }) => (
-  <MovieContainer>
-    <img
-      src={createImageLink(movie.poster_path)}
-      alt={movie.title}
-    />
+  <StyledMovie>
+    {
+      movie.poster_path ? (
+        <img
+          src={createImageLink(movie.poster_path)}
+          alt={movie.title}
+        />
+      )
+        : (
+          <img
+            src={NotFoundImage}
+            alt="not found"
+          />
+        )
+    }
     <div>
       <h3>
         {movie.title}
@@ -22,20 +33,15 @@ const SingleMovie = ({ movie }) => (
         </span>
       </Countdown>
       <p>
-        {movie.overview}
+        {truncate(movie.overview, 300)}
       </p>
       <LikeButton />
-
     </div>
-  </MovieContainer>
+  </StyledMovie>
 );
 
 SingleMovie.propTypes = {
-  movie: propTypes.shape({
-    poster_path: propTypes.string,
-    title: propTypes.string,
-    overview: propTypes.string,
-    release_date: propTypes.string,
-  }).isRequired,
+  movie: propTypes.shape({}).isRequired,
 };
+
 export default SingleMovie;

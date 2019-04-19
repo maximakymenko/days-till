@@ -1,9 +1,8 @@
 import React, { useEffect } from 'react';
 import propTypes from 'prop-types';
-import { Flex, Box } from '@rebass/grid';
 import { connect } from 'react-redux';
 import { requestMovies } from '../actions';
-
+import { Container } from '../styles/Container';
 import Header from '../components/Header';
 import SingleMovie from '../components/SingleMovie';
 
@@ -15,37 +14,26 @@ const Main = ({ requestMovies, movies }) => {
   }, [requestMovies]);
 
   const renderMovies = movies.map(movie => (
-    <Box
-      key={movie.id}
-      align="center"
-    >
-      <SingleMovie movie={movie} />
-    </Box>
+    <SingleMovie key={movie.id} movie={movie} />
   ));
 
   return (
     <>
       <Header />
-      <Flex
-        justifyContent="center"
-        flexWrap="wrap"
-      >
+      <Container>
         {renderMovies}
-      </Flex>
+      </Container>
     </>
   );
 };
 
 const mapStateToProps = ({ movies }) => ({
   movies: movies.movies,
-
 });
 
 Main.propTypes = {
   requestMovies: propTypes.func,
-  movies: propTypes.arrayOf(propTypes.shape({
-    poster_path: propTypes.string,
-  })),
+  movies: propTypes.arrayOf(propTypes.shape({})),
 };
 
 Main.defaultProps = {

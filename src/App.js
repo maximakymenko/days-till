@@ -5,13 +5,13 @@ import { ThemeProvider } from 'styled-components';
 import store from './store';
 import { GlobalStyle, theme } from './styles/GlobalStyle';
 
-import Home from './layouts/home';
+import Main from './layouts/main';
 
 const App = () => (
   <Provider store={store}>
     <GlobalStyle />
     <ThemeProvider theme={theme}>
-      <Home />
+      <Main />
     </ThemeProvider>
   </Provider>
 );

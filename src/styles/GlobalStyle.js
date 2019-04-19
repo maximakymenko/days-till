@@ -3,9 +3,6 @@ import { createGlobalStyle } from 'styled-components';
 export const theme = {
   primaryColorDark: '#313638',
   primaryColorLight: '#E8E9EB',
-  orange: '#F09D51',
-  red: '#F06543',
-  grey: '#E0DFD5',
   fontFamily: "'Nunito', sans-serif",
 
   fs1: '36px',
