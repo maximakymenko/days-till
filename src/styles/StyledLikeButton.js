@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
-export const StyledLikeButton = styled.div`
+export const StyledLikeButton = styled.button`
   text-align: center;
+  border: none;
   background: transparent;
+
+  &:focus {
+    outline: none;
+  }
 
   img {
     width: 3rem;

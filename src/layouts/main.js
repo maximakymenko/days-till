@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { requestMovies } from '../actions';
 import { Container } from '../styles/Container';
@@ -32,8 +32,8 @@ const mapStateToProps = ({ movies }) => ({
 });
 
 Main.propTypes = {
-  requestMovies: propTypes.func,
-  movies: propTypes.arrayOf(propTypes.shape({})),
+  requestMovies: PropTypes.func,
+  movies: PropTypes.arrayOf(PropTypes.shape({})),
 };
 
 Main.defaultProps = {
