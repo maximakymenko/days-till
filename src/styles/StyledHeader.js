@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
-  padding: 1rem 0 0 0;
   font-weight: bold;
   text-align: center;
 
@@ -9,7 +8,7 @@ export const StyledHeader = styled.header`
     display: inline-block;
     padding: 0.5em 1rem;
     font-size: ${props => props.theme.fs1};
-    border: solid 5px snow;
+    color: ${props => props.theme.primaryYellow};
     border-radius: 25px;
   }
 `;

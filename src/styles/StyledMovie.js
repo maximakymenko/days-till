@@ -1,18 +1,24 @@
 import styled from 'styled-components';
 
 export const StyledMovie = styled.div`
-  display: flex;
-  margin: 2rem;
+  margin: 1rem;
   box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.5);
   flex: 1;
 
+  @media (max-width: ${props => props.theme.mobile}) {
+    flex-direction: column;
+  }
+
   div {
+    position: relative;
     padding: 1rem;
+
+    @media (max-width: ${props => props.theme.mobile}) {
+      text-align: center;
+    }
   }
 
   img {
-    width: 20rem;
-    height: 30rem;
     object-fit: cover;
   }
 

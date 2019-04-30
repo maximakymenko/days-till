@@ -3,12 +3,15 @@ import { createGlobalStyle } from 'styled-components';
 export const theme = {
   primaryColorDark: '#313638',
   primaryColorLight: '#E8E9EB',
+  primaryYellow: '#FCF66A',
   fontFamily: "'Nunito', sans-serif",
 
   fs1: '36px',
   fs2: '24px',
   fs3: '16px',
   fs4: '12px',
+
+  mobile: '576px',
 };
 
 export const GlobalStyle = createGlobalStyle`

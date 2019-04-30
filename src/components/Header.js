@@ -5,6 +5,7 @@ const Header = () => (
   <StyledHeader>
     <h1>
       Movie timer
+      <span role="img" aria-label="popcorn">🍿</span>
     </h1>
   </StyledHeader>
 );

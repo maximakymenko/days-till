@@ -1,9 +1,13 @@
 import styled from 'styled-components';
 
 export const StyledLikeButton = styled.button`
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
   text-align: center;
   border: none;
   background: transparent;
+  transform: translateX(-50%);
   cursor: pointer;
 
   &:focus {
