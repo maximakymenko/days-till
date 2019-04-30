@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
-  padding: 2rem;
+  padding: 1rem 0 0 0;
   font-weight: bold;
   text-align: center;
 

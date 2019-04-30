@@ -4,6 +4,7 @@ export const StyledLikeButton = styled.button`
   text-align: center;
   border: none;
   background: transparent;
+  cursor: pointer;
 
   &:focus {
     outline: none;

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { requestMovies } from '../actions';
 import { Container } from '../styles/Container';
-import Header from '../components/Header';
 import SingleMovie from '../components/SingleMovie';
 
 
@@ -19,7 +18,6 @@ const Main = ({ requestMovies, movies }) => {
 
   return (
     <>
-      <Header />
       <Container>
         {renderMovies}
       </Container>

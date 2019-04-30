@@ -45,7 +45,7 @@ export default function moviesReducer(state = initialState, action) {
       }
       return {
         ...state,
-        favorite: state.favorite.filter(favMovie => favMovie !== action.movie.id),
+        favorite: state.favorite.filter(favMovie => favMovie.id !== action.movie.id),
         moviesError: null,
       };
 
