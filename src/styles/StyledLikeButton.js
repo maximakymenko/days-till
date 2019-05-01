@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledLikeButton = styled.button`
   position: absolute;
-  bottom: 5%;
+  bottom: 2%;
   left: 50%;
   text-align: center;
   border: none;

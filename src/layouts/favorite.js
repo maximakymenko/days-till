@@ -2,26 +2,30 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { NoMovies } from '../styles/NoMovies';
-import MovieImage from '../components/MovieImage';
+import MovieLayout from '../components/MovieLayout';
+import { Container } from '../styles/Container';
 import { StyledFavoriteMovie } from '../styles/StyledFavoriteMovie';
-
 
 const Favorite = ({ favorite }) => {
   const areThereAnyMovies = favorite.length >= 1;
   const renderMovies = favorite.map(movie => (
     <StyledFavoriteMovie key={movie.id}>
-      <MovieImage
+      <MovieLayout
         path={movie.poster_path}
         title={movie.title}
+        date={movie.release_date}
+        overview={movie.overview}
+        isMovieInFavorite
+        noTruncate
       />
-
-      {movie.title}
     </StyledFavoriteMovie>
   ));
 
   if (areThereAnyMovies) {
     return (
-      renderMovies
+      <Container>
+        {renderMovies}
+      </Container>
     );
   }
   return (

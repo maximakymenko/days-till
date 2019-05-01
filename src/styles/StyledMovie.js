@@ -1,17 +1,19 @@
 import styled from 'styled-components';
 
 export const StyledMovie = styled.div`
+  position: relative;
+  display: flex;
   margin: 1rem;
-  box-shadow: 0 1px 16px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: ${props => props.theme.primaryShadow};
   flex: 1;
+  flex-direction: column;
 
   @media (max-width: ${props => props.theme.mobile}) {
     flex-direction: column;
   }
 
   div {
-    position: relative;
-    padding: 1rem;
+    padding: 1rem 1rem 5rem 1rem;
 
     @media (max-width: ${props => props.theme.mobile}) {
       text-align: center;
@@ -23,7 +25,7 @@ export const StyledMovie = styled.div`
   }
 
   h3 {
-    font-size: ${props => props.theme.fs2};
+    font-size: ${props => props.theme['fs3-1']};
     text-align: center;
   }
 

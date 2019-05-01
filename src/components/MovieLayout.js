@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Countdown from 'react-countdown-now';
 import LikeButton from './LikeButton';
@@ -12,8 +12,9 @@ const MovieLayout = ({
   overview,
   isMovieInFavorite,
   addToFavorite,
+  noTruncate,
 }) => (
-  <Fragment>
+  <>
     <MovieImage
       path={path}
       title={title}
@@ -28,11 +29,11 @@ const MovieLayout = ({
         </span>
       </Countdown>
       <p>
-        {truncate(overview, 250)}
+        {noTruncate ? overview : truncate(overview, 250)}
       </p>
       <LikeButton active={isMovieInFavorite} addToFavorite={addToFavorite} />
     </div>
-  </Fragment>
+  </>
 );
 
 MovieLayout.propTypes = {
@@ -41,7 +42,13 @@ MovieLayout.propTypes = {
   date: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
   isMovieInFavorite: PropTypes.bool.isRequired,
-  addToFavorite: PropTypes.func.isRequired,
+  addToFavorite: PropTypes.func,
+  noTruncate: PropTypes.bool,
+};
+
+MovieLayout.defaultProps = {
+  addToFavorite: () => null,
+  noTruncate: false,
 };
 
 
