@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Countdown from 'react-countdown-now';
-import LikeButton from './LikeButton';
+import LikeButton from './buttons/LikeButton';
 import MovieImage from './MovieImage';
 import { truncate } from '../utils/utils';
 
@@ -31,7 +31,10 @@ const MovieLayout = ({
       <p>
         {noTruncate ? overview : truncate(overview, 250)}
       </p>
-      <LikeButton active={isMovieInFavorite} addToFavorite={addToFavorite} />
+      <LikeButton
+        active={isMovieInFavorite}
+        addToFavorite={addToFavorite}
+      />
     </div>
   </>
 );
@@ -41,7 +44,7 @@ MovieLayout.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
-  isMovieInFavorite: PropTypes.bool.isRequired,
+  isMovieInFavorite: PropTypes.bool,
   addToFavorite: PropTypes.func,
   noTruncate: PropTypes.bool,
 };
@@ -49,6 +52,7 @@ MovieLayout.propTypes = {
 MovieLayout.defaultProps = {
   addToFavorite: () => null,
   noTruncate: false,
+  isMovieInFavorite: false,
 };
 
 

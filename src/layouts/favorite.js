@@ -5,8 +5,10 @@ import { NoMovies } from '../styles/NoMovies';
 import MovieLayout from '../components/MovieLayout';
 import { Container } from '../styles/Container';
 import { StyledFavoriteMovie } from '../styles/StyledFavoriteMovie';
+import { addMovieToFavorite } from '../actions';
 
-const Favorite = ({ favorite }) => {
+// eslint-disable-next-line no-shadow
+const Favorite = ({ favorite, addMovieToFavorite }) => {
   const areThereAnyMovies = favorite.length >= 1;
   const renderMovies = favorite.map(movie => (
     <StyledFavoriteMovie key={movie.id}>
@@ -15,6 +17,7 @@ const Favorite = ({ favorite }) => {
         title={movie.title}
         date={movie.release_date}
         overview={movie.overview}
+        addToFavorite={() => addMovieToFavorite(movie)}
         isMovieInFavorite
         noTruncate
       />
@@ -42,10 +45,11 @@ const mapStateToProps = ({ movies }) => ({
 
 Favorite.propTypes = {
   favorite: PropTypes.arrayOf(PropTypes.shape({})),
+  addMovieToFavorite: PropTypes.func.isRequired,
 };
 
 Favorite.defaultProps = {
   favorite: [],
 };
 
-export default connect(mapStateToProps)(Favorite);
+export default connect(mapStateToProps, { addMovieToFavorite })(Favorite);

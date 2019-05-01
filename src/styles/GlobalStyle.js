@@ -14,6 +14,7 @@ export const theme = {
   fs4: '12px',
 
   mobile: '576px',
+  tablet: '768px',
 };
 
 export const GlobalStyle = createGlobalStyle`
