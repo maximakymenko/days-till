@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { requestMovies } from '../actions';
-import { Container } from '../styles/Container';
-import SingleMovie from '../components/SingleMovie';
+import { requestMovies } from 'actions';
+import { Container } from 'styles/Container';
+import SingleMovie from 'components/SingleMovie';
 
 
 // eslint-disable-next-line no-shadow

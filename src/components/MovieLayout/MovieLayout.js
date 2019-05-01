@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Countdown from 'react-countdown-now';
-import LikeButton from './buttons/LikeButton';
-import MovieImage from './MovieImage';
-import { truncate } from '../utils/utils';
+import { truncate } from '../../utils/utils';
+
+import LikeButton from '../buttons/LikeButton/LikeButton';
+import MovieImage from '../MovieImage';
 
 const MovieLayout = ({
   path,
@@ -20,7 +21,7 @@ const MovieLayout = ({
       title={title}
     />
     <div>
-      <h3>
+      <h3 data-testid="movie-title">
         {title}
       </h3>
       <Countdown date={date}>
@@ -28,7 +29,7 @@ const MovieLayout = ({
           Already in cinemas
         </span>
       </Countdown>
-      <p>
+      <p data-testid="movie-overview">
         {noTruncate ? overview : truncate(overview, 250)}
       </p>
       <LikeButton

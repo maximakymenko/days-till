@@ -2,15 +2,12 @@ import {
   FETCH_MOVIES,
   FETCH_MOVIES_SUCCESS,
   FETCH_MOVIES_FAILED,
-  ADD_OR_REMOVE_MOVIE_TO_FAVORITE,
+  ADD_OR_REMOVE_MOVIE_FROM_FAVORITE,
 } from '../types';
 
-const initialState = {
-  favorite: [],
-  movies: [],
-  moviesAreLoading: false,
-  moviesError: null,
-};
+import { INITIAL_STATE } from '../shared';
+
+const initialState = INITIAL_STATE;
 
 export default function moviesReducer(state = initialState, action) {
   switch (action.type) {
@@ -35,7 +32,7 @@ export default function moviesReducer(state = initialState, action) {
         moviesAreLoading: false,
         moviesError: action.error,
       };
-    case ADD_OR_REMOVE_MOVIE_TO_FAVORITE:
+    case ADD_OR_REMOVE_MOVIE_FROM_FAVORITE:
       if (!state.favorite.includes(action.movie)) {
         return {
           ...state,
