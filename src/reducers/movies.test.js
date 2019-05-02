@@ -10,7 +10,7 @@ import {
   ERROR_MESSAGE,
   MOVIES_DATA,
   FAVORITE_MOVIE,
-} from '../mocks/moviesMock';
+} from '../mocks';
 
 import { INITIAL_STATE } from '../shared';
 

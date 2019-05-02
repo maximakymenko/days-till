@@ -1,5 +1,7 @@
 export const ERROR_MESSAGE = 'Fetching error';
 
+export const TEST_MESSAGE = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit, tenetur.';
+
 export const MOVIES_DATA = [
   {
     vote_count: 2, id: 447404, video: false, vote_average: 8, title: 'Avengers: EndGame',

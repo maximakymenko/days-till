@@ -3,7 +3,7 @@ import { render, cleanup } from 'react-testing-library';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import SingleMovie from './SingleMovie';
-import { MOVIE_MOCK } from '../../mocks/moviesMock';
+import { MOVIE_MOCK } from '../../mocks';
 import { INITIAL_STATE } from '../../shared';
 
 const mockStore = configureMockStore();
@@ -25,9 +25,8 @@ describe('<SingleMovie />', () => {
   });
 
   it('should render movie image', () => {
-    const { debug, getByAltText } = render(<TestComponent />);
+    const { getByAltText } = render(<TestComponent />);
     expect(getByAltText('POKÉMON Detective Pikachu').tagName).toBe('IMG');
-    debug();
   });
 
   it('should render movie title ', () => {

@@ -8,7 +8,7 @@ import {
   fetchMoviesFailed,
 } from '../actions';
 
-function* loadMovies() {
+export function* loadMovies() {
   yield put(fetchMovies());
   try {
     const movies = yield call(fetchMoviesAPI);
@@ -21,6 +21,3 @@ function* loadMovies() {
 export default function* moviesSaga() {
   yield takeEvery(MOVIES_FETCH_REQUESTED, loadMovies);
 }
-
-
-// use it later for testing https://medium.freecodecamp.org/async-operations-using-redux-saga-2ba02ae077b3
