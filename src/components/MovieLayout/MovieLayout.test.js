@@ -5,10 +5,9 @@ import MovieLayout from './MovieLayout';
 
 afterEach(cleanup);
 
-const addToFavorite = () => jest.fn();
+const addToFavorite = jest.fn();
 
 describe('<MovieLayout />', () => {
-  // eslint-disable-next-line react/prop-types
   const TestComponent = () => (
     <MovieLayout
       path=""
@@ -34,7 +33,7 @@ describe('<MovieLayout />', () => {
     expect(getByTestId('movie-overview').textContent).toBe('overview');
   });
 
-  it('should render like button ', () => {
+  it('should render heart image', () => {
     const { getByAltText } = render(<TestComponent />);
     expect(getByAltText('like movie').tagName).toBe('IMG');
   });

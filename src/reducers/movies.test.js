@@ -1,18 +1,16 @@
-import movies from './movies';
 import {
   FETCH_MOVIES,
   FETCH_MOVIES_SUCCESS,
   FETCH_MOVIES_FAILED,
   ADD_OR_REMOVE_MOVIE_FROM_FAVORITE,
-} from '../types';
-
+} from 'types';
 import {
   ERROR_MESSAGE,
   MOVIES_DATA,
   FAVORITE_MOVIE,
-} from '../mocks';
-
-import { INITIAL_STATE } from '../shared';
+} from 'mocks';
+import { INITIAL_STATE } from 'shared';
+import movies from './movies';
 
 const initialState = INITIAL_STATE;
 

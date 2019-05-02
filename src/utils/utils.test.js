@@ -1,5 +1,5 @@
+import { TEST_MESSAGE } from 'mocks';
 import { createImageLink, truncate } from './utils';
-import { TEST_MESSAGE } from '../mocks';
 
 describe('createImageLink', () => {
   it('should return proper image link', () => {

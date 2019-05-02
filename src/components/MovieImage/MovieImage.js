@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import NotFoundImage from '../../assets/images/movie_not_found.jpg';
-import { createImageLink } from '../../utils/utils';
+import NotFoundImage from 'assets/images/movie_not_found.jpg';
+import { createImageLink } from 'utils/utils';
 
 const MovieImage = ({ path, title }) => {
   const renderImage = path ? (
@@ -31,4 +31,5 @@ MovieImage.defaultProps = {
   path: null,
   title: '',
 };
+
 export default MovieImage;

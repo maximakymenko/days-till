@@ -3,9 +3,9 @@ import {
   FETCH_MOVIES_SUCCESS,
   FETCH_MOVIES_FAILED,
   ADD_OR_REMOVE_MOVIE_FROM_FAVORITE,
-} from '../types';
+} from 'types';
 
-import { INITIAL_STATE } from '../shared';
+import { INITIAL_STATE } from 'shared';
 
 const initialState = INITIAL_STATE;
 

@@ -2,9 +2,9 @@ import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
+import { MOVIE_MOCK } from 'mocks';
+import { INITIAL_STATE } from 'shared';
 import SingleMovie from './SingleMovie';
-import { MOVIE_MOCK } from '../../mocks';
-import { INITIAL_STATE } from '../../shared';
 
 const mockStore = configureMockStore();
 const store = mockStore(INITIAL_STATE);

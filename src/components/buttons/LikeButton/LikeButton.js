@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import heartIcon from '../../../assets/icons/icon_heart.svg';
 
-import { StyledLikeButton } from '../../../styles/StyledLikeButton';
+import { StyledLikeButton } from 'styles/StyledLikeButton';
+import heartIcon from 'assets/icons/icon_heart.svg';
+
 
 const LikeButton = ({ active, addToFavorite }) => (
   <StyledLikeButton
+    data-testid="like-button"
     className="like-button"
     onClick={addToFavorite}
     active={active}

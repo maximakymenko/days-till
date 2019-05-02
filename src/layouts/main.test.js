@@ -2,7 +2,7 @@ import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
-import { INITIAL_STATE } from '../shared';
+import { INITIAL_STATE } from 'shared';
 import Main from './main';
 
 const mockStore = configureMockStore();

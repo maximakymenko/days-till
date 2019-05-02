@@ -1,12 +1,12 @@
 import { call, put, takeEvery } from 'redux-saga/effects';
 
-import { MOVIES_FETCH_REQUESTED } from '../types';
-import { fetchMoviesAPI } from '../services/api';
 import {
   fetchMovies,
   fetchMoviesSuccess,
   fetchMoviesFailed,
-} from '../actions';
+} from 'actions';
+import { MOVIES_FETCH_REQUESTED } from 'types';
+import { fetchMoviesAPI } from 'services/api';
 
 export function* loadMovies() {
   yield put(fetchMovies());

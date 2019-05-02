@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { StyledMovie } from '../../styles/StyledMovie';
-import { addMovieToFavorite } from '../../actions';
+import { StyledMovie } from 'styles/StyledMovie';
+import { addMovieToFavorite } from 'actions';
 import MovieLayout from '../MovieLayout';
 
 // eslint-disable-next-line no-shadow

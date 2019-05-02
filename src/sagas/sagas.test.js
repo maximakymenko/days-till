@@ -1,10 +1,10 @@
 import { call, put } from 'redux-saga/effects';
-import { fetchMoviesAPI } from '../services/api';
+import { fetchMoviesAPI } from 'services/api';
 import {
   fetchMovies,
   fetchMoviesSuccess,
   fetchMoviesFailed,
-} from '../actions';
+} from 'actions';
 import { loadMovies } from './index';
 
 describe('movies fetching flow', () => {

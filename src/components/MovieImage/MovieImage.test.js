@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup } from 'react-testing-library';
 
-import { MOVIE_PATH } from '../../mocks';
+import { MOVIE_PATH } from 'mocks';
 import MovieImage from './MovieImage';
 
 afterEach(cleanup);

@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Countdown from 'react-countdown-now';
-import { truncate } from '../../utils/utils';
+import { truncate } from 'utils/utils';
 
-import LikeButton from '../buttons/LikeButton/LikeButton';
+import LikeButton from '../buttons/LikeButton';
 import MovieImage from '../MovieImage';
 
 const MovieLayout = ({

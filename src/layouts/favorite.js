@@ -1,11 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { NoMovies } from '../styles/NoMovies';
-import { Container } from '../styles/Container';
-import { StyledFavoriteMovie } from '../styles/StyledFavoriteMovie';
-import { addMovieToFavorite } from '../actions';
-import MovieLayout from '../components/MovieLayout';
+import { addMovieToFavorite } from 'actions';
+
+import { NoMovies } from 'styles/NoMovies';
+import { Container } from 'styles/Container';
+import { StyledFavoriteMovie } from 'styles/StyledFavoriteMovie';
+
+import MovieLayout from 'components/MovieLayout';
 
 // eslint-disable-next-line no-shadow
 const Favorite = ({ favorite, addMovieToFavorite }) => {
