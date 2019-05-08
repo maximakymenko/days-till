@@ -9,7 +9,8 @@ import { GlobalStyle, theme } from './styles/GlobalStyle';
 
 import Main from './layouts/main';
 import Favorite from './layouts/favorite';
-import SignIn from './layouts/login';
+import Login from './layouts/login';
+import Logout from './layouts/logout';
 import Register from './layouts/register';
 import Navigation from './components/Navigation';
 
@@ -23,7 +24,8 @@ const App = () => (
             <Navigation />
             <Route exact path="/" component={Main} />
             <Route exact path="/favorite" component={Favorite} />
-            <Route path="/login" component={SignIn} />
+            <Route path="/login" component={Login} />
+            <Route path="/logout" component={Logout} />
             <Route path="/register" component={Register} />
           </Router>
         </ThemeProvider>

@@ -2,7 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 
 export const theme = {
   primaryColorDark: '#313638',
+  primaryColorDarkHover: '#3D4346',
   primaryColorLight: '#E8E9EB',
+  primaryRed: '#AD2424',
   primaryYellow: '#FCF66A',
   fontFamily: "'Nunito', sans-serif",
   primaryShadow: '0 1px 16px 0 rgba(0, 0, 0, 0.5)',

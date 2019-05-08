@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import { StyledLikeButton } from 'styles/StyledLikeButton';
 import heartIcon from 'assets/icons/icon_heart.svg';
 
