@@ -3,13 +3,13 @@ import styled from 'styled-components';
 export const StyledFavoriteMovie = styled.div`
   position: relative;
   display: flex;
-  width: 100%;
-  height: 15rem;
+  width: 40%;
+  height: auto;
   margin: 1rem auto;
   box-shadow: ${props => props.theme.primaryShadow};
 
   @media (max-width: ${props => props.theme.tablet}) {
-    height: auto;
+    width: 100%;
     flex-direction: column;
     align-items: center;
   }
@@ -26,6 +26,7 @@ export const StyledFavoriteMovie = styled.div`
 
   img {
     width: 10rem;
+    object-fit: cover;
 
     @media (max-width: ${props => props.theme.tablet}) {
       width: 20rem;

@@ -17,7 +17,8 @@ const Login = ({ history }) => {
     event.preventDefault();
     setLoading(true);
     firebase
-      .loginWithEmailAndPassword(email, password)
+      .auth()
+      .signInWithEmailAndPassword(email, password)
       .then(() => {
         setEmail('');
         setPassword('');

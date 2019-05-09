@@ -5,6 +5,7 @@ import {
   fetchMoviesSuccess,
   fetchMoviesFailed,
 } from 'actions';
+
 import { MOVIES_FETCH_REQUESTED } from 'types';
 import { fetchMoviesAPI } from 'services/api';
 

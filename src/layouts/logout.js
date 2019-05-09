@@ -1,11 +1,16 @@
 import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { StyledLogout } from 'styles/StyledLogout';
 import { FirebaseContext } from '../firebase';
 
-const Logout = () => {
+const Logout = ({ history }) => {
   const firebase = useContext(FirebaseContext);
 
-  const logout = () => firebase.signOut();
+  const logout = () => {
+    firebase.auth().signOut();
+    history.push('/');
+  };
 
   return (
     <StyledLogout>
@@ -20,4 +25,8 @@ const Logout = () => {
   );
 };
 
-export default Logout;
+Logout.propTypes = {
+  history: PropTypes.shape({}).isRequired,
+};
+
+export default withRouter(Logout);

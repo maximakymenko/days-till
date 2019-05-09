@@ -17,7 +17,8 @@ const Register = ({ history }) => {
     event.preventDefault();
     setLoading(true);
     firebase
-      .createUser(email, password)
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
       .then(() => {
         setEmail('');
         setPassword('');

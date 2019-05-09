@@ -10,7 +10,7 @@ const Navigation = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const listener = () => firebase.auth.onAuthStateChanged(authUser => setUser(authUser));
+    const listener = () => firebase.auth().onAuthStateChanged(authUser => setUser(authUser));
 
     return listener();
   });

@@ -2,8 +2,16 @@ import styled from 'styled-components';
 
 export const StyledNavigation = styled.nav`
 display: flex;
-justify-content: space-around;
 padding-top: 1rem;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+
+@media (min-width: ${props => props.theme.tablet}) {
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
 a {
   position: relative;
