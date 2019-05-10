@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import Form from 'components/Form';
-import { FirebaseContext } from '../firebase';
+import { FirebaseContext, firebaseDatabase } from '../firebase';
 
 
 const Register = ({ history }) => {
@@ -19,7 +19,9 @@ const Register = ({ history }) => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then(() => {
+      .then((authUser) => {
+        firebaseDatabase.ref(`users/${authUser.user.uid}`)
+          .set({ email });
         setEmail('');
         setPassword('');
         history.push('/');

@@ -8,6 +8,7 @@ const LikeButton = ({ active, addToFavorite }) => (
   <StyledLikeButton
     data-testid="like-button"
     className="like-button"
+    type="button"
     onClick={addToFavorite}
     active={active}
   >

@@ -1,17 +1,18 @@
-import React, { useContext } from 'react';
+/* eslint-disable no-shadow */
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { StyledMovie } from 'styles/StyledMovie';
-import { addMovieToFavorite } from 'actions';
+import { requestAddingMovies } from 'actions';
 import MovieLayout from '../MovieLayout';
-import { FirebaseContext } from '../../firebase';
 
-// eslint-disable-next-line no-shadow
-const SingleMovie = ({ movie, favorite, addMovieToFavorite }) => {
-  const firebase = useContext(FirebaseContext);
+const SingleMovie = ({
+  movie,
+  favorite,
+  requestAddingMovies,
+}) => {
   const addToFavorite = () => {
-    addMovieToFavorite(movie);
-    console.log(firebase);
+    requestAddingMovies(movie);
   };
   const isMovieInFavorite = favorite.some(favMovie => favMovie.id === movie.id);
 
@@ -34,7 +35,7 @@ const mapStateToProps = ({ movies }) => ({
 });
 
 SingleMovie.propTypes = {
-  addMovieToFavorite: PropTypes.func.isRequired,
+  requestAddingMovies: PropTypes.func.isRequired,
   movie: PropTypes.shape({}).isRequired,
   favorite: PropTypes.arrayOf(PropTypes.shape({})),
 };
@@ -43,4 +44,4 @@ SingleMovie.defaultProps = {
   favorite: [],
 };
 
-export default connect(mapStateToProps, { addMovieToFavorite })(SingleMovie);
+export default connect(mapStateToProps, { requestAddingMovies })(SingleMovie);

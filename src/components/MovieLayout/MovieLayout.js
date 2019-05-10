@@ -46,12 +46,11 @@ MovieLayout.propTypes = {
   date: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
   isMovieInFavorite: PropTypes.bool,
-  addToFavorite: PropTypes.func,
+  addToFavorite: PropTypes.func.isRequired,
   noTruncate: PropTypes.bool,
 };
 
 MovieLayout.defaultProps = {
-  addToFavorite: () => null,
   noTruncate: false,
   isMovieInFavorite: false,
 };
