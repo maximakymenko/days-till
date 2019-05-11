@@ -1,6 +1,7 @@
 import { firebaseDatabase } from '../firebase';
 
 const url = new URL('https://api.themoviedb.org/3/movie/upcoming');
+const FIREBASE_URL = 'https://fcm.googleapis.com/fcm/send';
 const params = { api_key: process.env.REACT_APP_API_KEY };
 
 const REGION = '&region=US';
@@ -14,19 +15,19 @@ export const fetchMoviesAPI = async () => {
   return results;
 };
 
-export const sendUserNotification = async () => {
-  await fetch('https://fcm.googleapis.com/fcm/send ', {
+export const sendUserNotification = async (title, body) => {
+  await fetch(FIREBASE_URL, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
-      Authorization: 'key=AAAACoESpwQ:APA91bH1fTzG16ddQ0WUHCfAjiALa8EMxP-3UJsiZaYsvQaMSQfEfWrhe1tKJgwQGtAKpbHw3NQp5ivIvUkXzqO_BxIrEd70uRpaP0bT-1eTurnQ-8mNtvbHdExqmqUITr0OtwI9bg4K',
+      Authorization: `key=${process.env.REACT_APP_FIREBASE_SERVER_KEY}`,
     },
     body: JSON.stringify({
       data: {
         sound: 'default',
-        title: 'movie project',
-        body: 'it worked',
+        title,
+        body,
       },
       to: localStorage.getItem('notifications-token'),
     }),

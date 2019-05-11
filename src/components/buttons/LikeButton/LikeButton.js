@@ -6,8 +6,8 @@ import { sendUserNotification } from 'services/api';
 
 
 const LikeButton = ({ active, addToFavorite }) => {
-  const magic = () => {
-    sendUserNotification();
+  const addToFavoriteAndSendNotifications = () => {
+    sendUserNotification('Added!', 'Movie was successfully added');
     addToFavorite();
   };
   return (
@@ -15,7 +15,7 @@ const LikeButton = ({ active, addToFavorite }) => {
       data-testid="like-button"
       className="like-button"
       type="button"
-      onClick={magic}
+      onClick={addToFavoriteAndSendNotifications}
       active={active}
     >
       <img
