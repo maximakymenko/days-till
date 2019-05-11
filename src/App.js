@@ -2,7 +2,6 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import { PersistGate } from 'redux-persist/integration/react';
 import { firebase, FirebaseContext } from './firebase';
 import { store } from './store';
 import { GlobalStyle, theme } from './styles/GlobalStyle';
@@ -16,7 +15,6 @@ import Navigation from './components/Navigation';
 
 const App = () => (
   <Provider store={store}>
-    {/* <PersistGate loading={null} persistor={persistor}> */}
     <FirebaseContext.Provider value={firebase}>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
@@ -30,7 +28,6 @@ const App = () => (
         </Router>
       </ThemeProvider>
     </FirebaseContext.Provider>
-    {/* </PersistGate> */}
   </Provider>
 );
 
