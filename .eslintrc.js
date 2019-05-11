@@ -18,6 +18,9 @@ module.exports = {
       },
     },
   },
+  globals: {
+    "cy": true
+  },
   rules: {
     'react/jsx-filename-extension': [
       2, { extensions: ['.js'] },
